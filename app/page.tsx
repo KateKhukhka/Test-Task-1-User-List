@@ -3,6 +3,14 @@ import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle }
 import Link from "next/link";
 import NotFound from "./not-found";
 
+interface User {
+  id: number,
+  username: string,
+  email: string,
+  company: {name: string}
+}
+
+ //получение данных от сервера
 export const getUsers = async () => {
   const response = await fetch("https://jsonplaceholder.typicode.com/users");
   const users = await response.json();
@@ -11,11 +19,7 @@ export const getUsers = async () => {
 };
 
 export default async function Home() {
-  const users = await getUsers();
-  //получение данных от сервера
-  //const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  //const users = await response.json();
-  // if (!users) NotFound();
+  const users: User[] = await getUsers();
 
   return (
     <div>

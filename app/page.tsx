@@ -3,7 +3,7 @@ import { Card, CardAction, CardContent, CardDescription, CardHeader, CardTitle }
 import Link from "next/link";
 import NotFound from "./not-found";
 //импорт интерфейса пользователя
-import IUser from "./interfaceUser";
+import { IUser } from "./interfaceUser";
 
 //получение данных всех пользователей от сервера
 export async function getUsers() {

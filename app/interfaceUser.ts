@@ -3,9 +3,13 @@ interface IUser {
   username: string;
   email: string;
   company: { name: string };
-  name?: string;
-  address: { street?: string; city?: string };
-  phone?: string;
-  website?: string;
 }
-export default IUser;
+
+interface IUserInfo extends IUser {
+  name: string;
+  address: { street: string; city: string };
+  phone: string;
+  website: string;
+}
+
+export type { IUser, IUserInfo };

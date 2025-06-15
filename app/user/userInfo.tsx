@@ -1,6 +1,6 @@
-import IUser from "../interfaceUser";
+import { IUserInfo } from "../interfaceUser";
 
-export default function UserInfoCard({ user }: { user: IUser }) {
+export default function UserInfoCard({ user }: { user: IUserInfo }) {
   if (!user) {
     return <p>No information</p>;
   }
